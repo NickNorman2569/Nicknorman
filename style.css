@@ -147,3 +147,49 @@ margin-top:40px;
 border-top:3px solid #8b0000;
 width:100%;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .Tudo {
+        padding: 10px;
+        max-width: 100%;
+    }
+    header {
+        padding: 20px;
+    }
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav a {
+        margin: 0;
+    }
+    section {
+        padding: 20px;
+        flex-direction: column;
+    }
+    .card {
+        padding: 15px;
+        margin-top: 15px;
+    }
+    table {
+        font-size: 14px;
+        overflow-x: auto;
+        display: block;
+    }
+    form {
+        max-width: 100%;
+    }
+    input, textarea, select {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    .img-box img {
+        width: 180px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+}
