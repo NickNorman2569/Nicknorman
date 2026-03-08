@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Contato</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<div class="card">
+<h1>CONTATO</h1>
+</div>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="sobre.html">Sobre</a>
+<a href="servicos.html">Serviços</a>
+<a href="portfolio.html">Portfólio</a>
+<a href="contato.html">Contato</a>
+</nav>
+</header>
+
+<section>
+
+<div class="Tudo">
+<h2>Entre em contato</h2>
+
+<p>
+Se você deseja desenvolver um site ou precisa de alguma
+manutenção, preencha o formulário abaixo.
+</p>
+
+<form id="contatoForm">
+
+<label>Nome</label>
+<input type="text" id="nome" placeholder="Digite seu nome" required>
+
+<label>Email</label>
+<input type="email" id="email" placeholder="Digite seu email" required>
+
+<label>Tipo de serviço</label>
+<select id="servico" required>
+<option value="">Selecione um serviço</option>
+<option value="Criação de site">Criação de site</option>
+<option value="Landing page">Landing page</option>
+<option value="Manutenção">Manutenção</option>
+</select>
+
+<label>Telefone</label>
+<input type="tel" id="telefone" placeholder="(00) 00000-0000">
+
+<label>Mensagem</label>
+<textarea id="mensagem" placeholder="Digite sua mensagem" required></textarea>
+
+<button type="button" onclick="enviarWhatsApp()">Enviar mensagem</button>
+
+</form>
+
+<h2>Outras formas de contato</h2>
+
+<ul>
+<li>Email: nicolaspao4599@gmail.com</li>
+<li>Instagram: @nicknorman_unlk</li>
+<li>GitHub: github.com/nicknorman2569</li>
+</ul>
+</div>
+
+</section>
+
+<footer>
+<p>Nick q fez:)</p>
+</footer>
+
+<script>
+function enviarWhatsApp() {
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const servico = document.getElementById('servico').value;
+    const telefone = document.getElementById('telefone').value;
+    const mensagem = document.getElementById('mensagem').value;
+    
+    if (!nome || !email || !servico || !mensagem) {
+        alert('Por favor, preencha todos os campos obrigatórios!');
+        return;
+    }
+    
+    const texto = `Olá! Meu nome é ${nome}%0AEmail: ${email}%0AServiço desejado: ${servico}%0ATelefone: ${telefone || 'Não informado'}%0A%0AMensagem:%0A${mensagem}`;
+    
+    const url = `https://wa.me/5549984294290?text=${texto}`;
+    window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
